@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veille réglementaire QSE/RSE – SATA</title>
+<meta name="description" content="Veille réglementaire QSE/RSE des domaines skiables SATA, mise à jour chaque lundi.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 28 12 10l5 8 4-5 9 15z' fill='%230b3a5b'/%3E%3Cpath d='M12 10l3 5-3-1-2 2z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#10222f; --muted:#5b6b78; --line:#dfe5ea; --bg:#f4f6f8; --card:#fff;
+  --brand:#0b3a5b; --brand2:#1c6ea4; --ice:#e8f2f9;
+  --red:#c0392b; --red-bg:#fdecea; --orange:#c76a00; --orange-bg:#fff3e0;
+  --green:#2e7d4f; --green-bg:#e8f5ec; --yellow-bg:#fff8db; --yellow:#8a6d00;
+  --gray-bg:#eef1f4; --blue-bg:#e6f0fa;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--brand2)}
+header.top{background:linear-gradient(160deg,#0b3a5b 0%,#14557f 60%,#1c6ea4 100%);color:#fff;position:relative;overflow:hidden}
+header.top svg.ridge{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:70px;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.hero{padding-top:34px;padding-bottom:84px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin:0 0 6px}
+h1{font-size:clamp(24px,3.4vw,34px);line-height:1.15;margin:0 0 10px;font-weight:750}
+.updated{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:999px;font-size:14px}
+.updated .dot{width:8px;height:8px;border-radius:50%;background:#7ee2a8;box-shadow:0 0 0 3px rgba(126,226,168,.25)}
+.sub{opacity:.85;margin:12px 0 0;max-width:720px;font-size:14px}
+main{margin-top:-56px;position:relative;padding-bottom:48px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:var(--card);border-radius:var(--radius);padding:16px 18px;box-shadow:0 1px 2px rgba(16,34,47,.06),0 6px 20px rgba(16,34,47,.06)}
+.kpi b{display:block;font-size:28px;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:13px}
+.kpi.alert b{color:var(--red)}
+.kpi.warn b{color:var(--orange)}
+section{margin-top:26px}
+h2{font-size:18px;margin:0 0 12px;display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
+h2 small{font-weight:500;color:var(--muted);font-size:13px}
+.panel{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:0 1px 2px rgba(16,34,47,.05)}
+/* échéances */
+.dl{list-style:none;margin:0;padding:0}
+.dl li{display:grid;grid-template-columns:92px 1fr auto;gap:12px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--line)}
+.dl li:last-child{border-bottom:0}
+.dl .when{font-weight:700;font-variant-numeric:tabular-nums}
+.dl .when small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.dl .what{min-width:0}
+.dl .what a{color:inherit;text-decoration:none}
+.dl .what a:hover{text-decoration:underline}
+.dl .what div{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.late .when{color:var(--red)}
+.soon .when{color:var(--orange)}
+/* filtres */
+.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px;margin-bottom:12px}
+.filters input,.filters select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit;color:inherit}
+.filters input:focus,.filters select:focus{outline:2px solid var(--brand2);outline-offset:-1px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 10px;color:var(--muted);font-size:13px;flex-wrap:wrap}
+.bar button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;cursor:pointer;color:var(--ink)}
+.bar button:hover{border-color:var(--brand2)}
+/* cartes */
+.list{display:grid;gap:10px}
+details.t{background:var(--card);border-radius:var(--radius);box-shadow:0 1px 2px rgba(16,34,47,.05);border-left:4px solid var(--line)}
+details.t.c-el{border-left-color:var(--red)}
+details.t.c-mo{border-left-color:#f0a030}
+details.t.c-fa{border-left-color:#7cbf95}
+details.t summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:6px 14px}
+details.t summary::-webkit-details-marker{display:none}
+.title{font-weight:650;line-height:1.35}
+.meta{display:flex;flex-wrap:wrap;gap:6px;grid-column:1/-1}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600;background:var(--gray-bg);color:#3a4a56;white-space:nowrap}
+.p-app{background:var(--green-bg);color:var(--green)}
+.p-ana{background:var(--yellow-bg);color:var(--yellow)}
+.p-info{background:var(--blue-bg);color:var(--brand2)}
+.p-el{background:var(--red-bg);color:var(--red)}
+.p-mo{background:var(--orange-bg);color:var(--orange)}
+.p-fa{background:var(--green-bg);color:var(--green)}
+.p-dom{background:var(--ice);color:var(--brand)}
+.right{text-align:right;font-size:13px;color:var(--muted);white-space:nowrap}
+.right b{display:block;color:var(--ink);font-size:14px}
+.body{padding:0 16px 16px;display:grid;gap:12px}
+.body h4{margin:0 0 3px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.body p{margin:0}
+.grid2{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:var(--bg);border-radius:10px;padding:12px}
+.action{background:#f2f8f4;border-radius:10px;padding:12px;border:1px solid #d7ecdf}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+/* journal */
+table.j{width:100%;border-collapse:collapse;font-size:14px}
+table.j th,table.j td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.j th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+table.j td.n,table.j th.n{text-align:right;font-variant-numeric:tabular-nums}
+footer{color:var(--muted);font-size:13px;padding:10px 0 40px}
+footer p{margin:6px 0}
+.err{background:var(--red-bg);color:var(--red);padding:14px;border-radius:10px}
+@media (max-width:860px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .filters{grid-template-columns:1fr 1fr}
+  .filters .q{grid-column:1/-1}
+  .grid2{grid-template-columns:1fr}
+  details.t summary{grid-template-columns:1fr}
+  .right{text-align:left}
+  .dl li{grid-template-columns:96px 1fr}
+  .dl li .pill{display:none}
+  table.j .hide-m{display:none}
+}
+@media print{
+  header.top{background:none;color:var(--ink)} header.top svg.ridge,.filters,.bar button,.updated .dot{display:none}
+  main{margin-top:0} body{background:#fff} details.t{break-inside:avoid;box-shadow:none;border:1px solid var(--line)}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap hero">
+    <p class="eyebrow">SATA · Service QSE/RSE</p>
+    <h1>Veille réglementaire QSE/RSE</h1>
+    <div class="updated"><span class="dot"></span><span id="updated">Chargement…</span></div>
+    <p class="sub">Textes nouveaux ou à venir pour les domaines des 2 Alpes, de l'Alpe d'Huez, de La Grave et de l'Alpe du Grand Serre : santé-sécurité, remontées mécaniques, environnement, eau, énergie, déchets, RSE, normes ISO, droit social. Mise à jour automatique chaque lundi matin.</p>
+  </div>
+  <svg class="ridge" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 70V48l90-30 70 22 110-38 90 34 80-18 120 40 90-26 110 20 100-36 120 30 70-14 60 12 90 4V70z" fill="#f4f6f8"/></svg>
+</header>
+
+<main class="wrap">
+  <div class="kpis" id="kpis"></div>
+
+  <section>
+    <h2>Prochaines échéances <small>actions à mener dans les 90 jours</small></h2>
+    <div class="panel"><ul class="dl" id="deadlines"></ul></div>
+  </section>
+
+  <section>
+    <h2>Textes suivis <small id="count"></small></h2>
+    <div class="filters">
+      <input class="q" id="q" type="search" placeholder="Rechercher (titre, référence, action…)" aria-label="Rechercher">
+      <select id="f-dom" aria-label="Domaine"><option value="">Tous les domaines</option></select>
+      <select id="f-app" aria-label="Applicabilité"><option value="">Toute applicabilité</option></select>
+      <select id="f-crit" aria-label="Criticité"><option value="">Toute criticité</option></select>
+      <select id="f-site" aria-label="Site"><option value="">Tous les sites</option></select>
+    </div>
+    <div class="bar">
+      <span id="shown"></span>
+      <span>
+        <button type="button" id="sort">Trier : priorité</button>
+        <button type="button" id="toggle">Tout déplier</button>
+        <button type="button" id="reset">Réinitialiser</button>
+      </span>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section>
+    <h2>Journal des veilles</h2>
+    <div class="panel" style="overflow-x:auto"><table class="j"><thead><tr><th>Date</th><th class="hide-m">Période</th><th class="n">Textes</th><th class="n">Applicables</th><th class="n">Criticité élevée</th><th class="hide-m">Faits marquants</th></tr></thead><tbody id="journal"></tbody></table></div>
+  </section>
+
+  <footer>
+    <p>Veille d'information générée chaque lundi par une routine automatique, puis analysée par le service QSE/RSE. Elle ne remplace pas la lecture des textes officiels : vérifier la source (Légifrance, EUR-Lex, préfecture…) avant toute décision. Les mentions « à confirmer » signalent une information non encore vérifiée sur la source primaire.</p>
+    <p>Contact : service QSE/RSE SATA.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var DATA = null, sortMode = "prio", opened = false;
+  var CRIT = {"Élevée":0,"Moyenne":1,"Faible":2};
+  var APP = {"Applicable":0,"À analyser":1,"Pour info":2,"Non applicable":3};
+  var SITES = ["Les 2 Alpes","Alpe d'Huez","La Grave","Alpe du Grand Serre"];
+  var $ = function(id){return document.getElementById(id);};
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+  function safeUrl(u){return /^https?:\/\//i.test(u||"")?u:null;}
+  function d(s){if(!s)return null;var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(s);return m?new Date(+m[1],m[2]-1,+m[3]):null;}
+  function fr(s){var x=d(s);return x?x.toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric"}):"—";}
+  function today(){var t=new Date();return new Date(t.getFullYear(),t.getMonth(),t.getDate());}
+  function daysTo(s){var x=d(s);return x?Math.round((x-today())/864e5):null;}
+  function cls(map,v,pre){return pre+({"Applicable":"app","À analyser":"ana","Pour info":"info","Élevée":"el","Moyenne":"mo","Faible":"fa"}[v]||"x");}
+  function critClass(v){return {"Élevée":"c-el","Moyenne":"c-mo","Faible":"c-fa"}[v]||"";}
+  function siteMatch(t,site){
+    if(!site)return true;
+    var s=(t.sites||"").toLowerCase();
+    if(/tous/.test(s))return true;
+    return s.indexOf(site.toLowerCase().replace("alpe d'huez","alpe d"))!==-1 || s.indexOf(site.toLowerCase())!==-1;
+  }
+
+  function fillSelect(el,values){values.forEach(function(v){var o=document.createElement("option");o.value=v;o.textContent=v;el.appendChild(o);});}
+
+  function kpis(ts){
+    var app=ts.filter(function(t){return t.applicabilite==="Applicable";}).length;
+    var el=ts.filter(function(t){return t.criticite==="Élevée" && t.applicabilite!=="Non applicable";}).length;
+    var soon=ts.filter(function(t){var n=daysTo(t.echeance);return n!==null&&n<=90&&t.statut!=="Conforme / clos"&&t.statut!=="Sans suite";}).length;
+    $("kpis").innerHTML=
+      '<div class="kpi"><b>'+ts.length+'</b><span>textes suivis</span></div>'+
+      '<div class="kpi"><b>'+app+'</b><span>applicables à la SATA</span></div>'+
+      '<div class="kpi alert"><b>'+el+'</b><span>criticité élevée</span></div>'+
+      '<div class="kpi warn"><b>'+soon+'</b><span>échéances ≤ 90 jours</span></div>';
+  }
+
+  function deadlines(ts){
+    var items=ts.filter(function(t){var n=daysTo(t.echeance);return n!==null&&n<=90&&t.statut!=="Conforme / clos"&&t.statut!=="Sans suite";})
+      .sort(function(a,b){return d(a.echeance)-d(b.echeance);});
+    if(!items.length){$("deadlines").innerHTML='<li class="empty" style="display:block">Aucune échéance dans les 90 prochains jours.</li>';return;}
+    $("deadlines").innerHTML=items.map(function(t){
+      var n=daysTo(t.echeance), state=n<0?"late":(n<=30?"soon":"");
+      var rel=n<0?("dépassée de "+(-n)+" j"):(n===0?"aujourd'hui":"dans "+n+" j");
+      return '<li class="'+state+'"><div class="when">'+fr(t.echeance)+'<small>'+rel+'</small></div>'+
+        '<div class="what"><a href="#'+esc(t.id)+'">'+esc(t.intitule)+'</a><div>'+esc(t.action||"")+'</div></div>'+
+        '<span class="pill '+cls(0,t.criticite,"p-")+'">'+esc(t.criticite||"")+'</span></li>';
+    }).join("");
+  }
+
+  function card(t){
+    var url=safeUrl(t.lien);
+    var n=daysTo(t.echeance);
+    var right=t.echeance?('<b>'+fr(t.echeance)+'</b>échéance action'):(t.vigueur?('<b>'+fr(t.vigueur)+'</b>entrée en vigueur'):'');
+    return '<details class="t '+critClass(t.criticite)+'" id="'+esc(t.id)+'"'+(opened?" open":"")+'>'+
+      '<summary><div class="title">'+esc(t.intitule)+'</div><div class="right">'+right+'</div>'+
+      '<div class="meta">'+
+        '<span class="pill p-dom">'+esc(t.domaine||"")+'</span>'+
+        (t.applicabilite?'<span class="pill '+cls(0,t.applicabilite,"p-")+'">'+esc(t.applicabilite)+'</span>':'')+
+        (t.criticite?'<span class="pill '+cls(0,t.criticite,"p-")+'">Criticité '+esc(t.criticite.toLowerCase())+'</span>':'')+
+        (t.statut?'<span class="pill">'+esc(t.statut)+'</span>':'')+
+        (t.type?'<span class="pill">'+esc(t.type)+'</span>':'')+
+      '</div></summary>'+
+      '<div class="body">'+
+        (t.resume?'<div><h4>Résumé</h4><p>'+esc(t.resume)+'</p></div>':'')+
+        (t.action?'<div class="action"><h4>Action pour la SATA</h4><p>'+esc(t.action)+'</p></div>':'')+
+        '<div class="grid2">'+
+          '<div><h4>Référence</h4><p>'+esc(t.reference||"—")+'</p></div>'+
+          '<div><h4>Sites concernés</h4><p>'+esc(t.sites||"—")+'</p></div>'+
+          '<div><h4>Dates</h4><p>Publié : '+fr(t.publie)+'<br>En vigueur : '+fr(t.vigueur)+'<br>Détecté : '+fr(t.detecte)+'</p></div>'+
+        '</div>'+
+        (url?'<p><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Consulter la source ↗</a> <span style="color:var(--muted);font-size:13px">· '+esc(t.id)+'</span></p>':'<p style="color:var(--muted);font-size:13px">'+esc(t.id)+'</p>')+
+      '</div></details>';
+  }
+
+  function render(){
+    var ts=DATA.textes, q=$("q").value.trim().toLowerCase();
+    var fd=$("f-dom").value, fa=$("f-app").value, fc=$("f-crit").value, fs=$("f-site").value;
+    var rows=ts.filter(function(t){
+      if(fd&&t.domaine!==fd)return false;
+      if(fa&&t.applicabilite!==fa)return false;
+      if(fc&&t.criticite!==fc)return false;
+      if(!siteMatch(t,fs))return false;
+      if(q){var h=[t.intitule,t.reference,t.resume,t.action,t.domaine,t.id,t.sites].join(" ").toLowerCase();if(h.indexOf(q)===-1)return false;}
+      return true;
+    });
+    rows.sort(sortMode==="prio"?function(a,b){
+      return (APP[a.applicabilite]??9)-(APP[b.applicabilite]??9)||(CRIT[a.criticite]??9)-(CRIT[b.criticite]??9)||((d(a.echeance)||9e15)-(d(b.echeance)||9e15));
+    }:function(a,b){return (d(b.detecte)||0)-(d(a.detecte)||0)||String(b.id).localeCompare(String(a.id));});
+    $("list").innerHTML=rows.length?rows.map(card).join(""):'<div class="panel empty">Aucun texte ne correspond à ces filtres.</div>';
+    $("shown").textContent=rows.length+" texte"+(rows.length>1?"s":"")+" affiché"+(rows.length>1?"s":"");
+  }
+
+  function journal(js){
+    js=js.slice().sort(function(a,b){return (d(b.date)||0)-(d(a.date)||0);});
+    $("journal").innerHTML=js.length?js.map(function(j){
+      return '<tr><td>'+fr(j.date)+'</td><td class="hide-m">'+esc(j.periode||"")+'</td><td class="n">'+esc(j.detectes??"")+'</td><td class="n">'+esc(j.applicables??"")+'</td><td class="n">'+esc(j.eleves??"")+'</td><td class="hide-m">'+esc(j.faits||"")+'</td></tr>';
+    }).join(""):'<tr><td colspan="6" class="empty">Pas encore d\'entrée.</td></tr>';
+  }
+
+  function updatedLabel(iso){
+    var x=new Date(iso);
+    if(isNaN(x))return "Mise à jour : "+iso;
+    var s=x.toLocaleString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric",hour:"2-digit",minute:"2-digit",timeZone:"Europe/Paris"});
+    return "Dernière mise à jour : "+s.replace(/ à /," à ").replace(/:/,"h");
+  }
+
+  function uniq(a){return a.filter(function(v,i){return v&&a.indexOf(v)===i;}).sort(function(x,y){return x.localeCompare(y,"fr");});}
+
+  fetch("data/veille.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(j){
+    DATA=j; var ts=j.textes||[];
+    $("updated").textContent=updatedLabel(j.meta&&j.meta.updated_at);
+    $("count").textContent=ts.length+" au total";
+    fillSelect($("f-dom"),uniq(ts.map(function(t){return t.domaine;})));
+    fillSelect($("f-app"),Object.keys(APP).filter(function(k){return ts.some(function(t){return t.applicabilite===k;});}));
+    fillSelect($("f-crit"),Object.keys(CRIT));
+    fillSelect($("f-site"),SITES);
+    kpis(ts); deadlines(ts); journal(j.journal||[]); render();
+    if(location.hash){var el=document.getElementById(location.hash.slice(1));if(el){el.open=true;el.scrollIntoView();}}
+  }).catch(function(e){
+    $("updated").textContent="Données indisponibles";
+    $("list").innerHTML='<div class="err">Impossible de charger data/veille.json ('+esc(e.message)+').</div>';
+  });
+
+  ["q","f-dom","f-app","f-crit","f-site"].forEach(function(id){$(id).addEventListener("input",function(){if(DATA)render();});});
+  $("sort").addEventListener("click",function(){sortMode=sortMode==="prio"?"date":"prio";this.textContent="Trier : "+(sortMode==="prio"?"priorité":"plus récents");render();});
+  $("toggle").addEventListener("click",function(){opened=!opened;this.textContent=opened?"Tout replier":"Tout déplier";document.querySelectorAll("details.t").forEach(function(x){x.open=opened;});});
+  $("reset").addEventListener("click",function(){["q","f-dom","f-app","f-crit","f-site"].forEach(function(id){$(id).value="";});render();});
+  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('.dl a');if(a){var el=document.getElementById(a.getAttribute("href").slice(1));if(el)el.open=true;}});
+})();
+</script>
+</body>
+</html>
