@@ -91,6 +91,15 @@ table.j th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spa
 table.j td.n,table.j th.n{text-align:right;font-variant-numeric:tabular-nums}
 footer{color:var(--muted);font-size:13px;padding:10px 0 40px}
 footer p{margin:6px 0}
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;margin:22px 0 0;padding:8px 0;background:var(--bg);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 16px;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+.tabs button:hover{border-color:var(--brand2)}
+.tabs button[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.tabs .n{display:inline-block;min-width:22px;padding:0 6px;margin-left:4px;border-radius:999px;background:var(--gray-bg);color:var(--ink);font-size:12px;line-height:20px;text-align:center}
+.tabs button[aria-selected="true"] .n{background:rgba(255,255,255,.2);color:#fff}
+section.tab{margin-top:14px}
+section.tab[hidden]{display:none}
 .muted{color:var(--muted);font-size:12px;margin-top:2px}
 .nowrap{white-space:nowrap;font-variant-numeric:tabular-nums}
 .late-t{color:var(--red);font-weight:700}
@@ -109,6 +118,7 @@ p.wait{margin:0;font-size:13px;color:var(--muted);font-style:italic}
   table.j .hide-m{display:none}
 }
 @media print{
+  .tabs{display:none} section.tab[hidden]{display:block !important}
   header.top{background:none;color:var(--ink)} header.top svg.ridge,.filters,.bar button,.updated .dot{display:none}
   main{margin-top:0} body{background:#fff} details.t{break-inside:avoid;box-shadow:none;border:1px solid var(--line)}
 }
@@ -128,12 +138,19 @@ p.wait{margin:0;font-size:13px;color:var(--muted);font-style:italic}
 <main class="wrap">
   <div class="kpis" id="kpis"></div>
 
-  <section>
+  <nav class="tabs" role="tablist" aria-label="Sections de la veille">
+    <button role="tab" data-tab="echeances">📅 Échéances <span class="n" id="n-ech"></span></button>
+    <button role="tab" data-tab="textes">📄 Textes <span class="n" id="n-txt"></span></button>
+    <button role="tab" data-tab="calendrier">🔁 Calendrier <span class="n" id="n-cal"></span></button>
+    <button role="tab" data-tab="journal">🗒️ Journal</button>
+  </nav>
+
+  <section class="tab" data-tab="echeances">
     <h2>Prochaines échéances <small>actions issues de la veille et obligations récurrentes, 90 jours</small></h2>
     <div class="panel"><ul class="dl" id="deadlines"></ul></div>
   </section>
 
-  <section>
+  <section class="tab" data-tab="textes">
     <h2>Textes suivis <small id="count"></small></h2>
     <div class="filters">
       <input class="q" id="q" type="search" placeholder="Rechercher (titre, référence, action…)" aria-label="Rechercher">
@@ -153,12 +170,12 @@ p.wait{margin:0;font-size:13px;color:var(--muted);font-style:italic}
     <div class="list" id="list"></div>
   </section>
 
-  <section>
+  <section class="tab" data-tab="calendrier">
     <h2>Calendrier réglementaire <small id="cal-count"></small></h2>
     <div class="panel" style="overflow-x:auto"><table class="j"><thead><tr><th>Obligation récurrente</th><th class="hide-m">Domaine</th><th>Prochaine échéance</th><th class="hide-m">Périodicité</th><th>Statut</th></tr></thead><tbody id="calendar"></tbody></table></div>
   </section>
 
-  <section>
+  <section class="tab" data-tab="journal">
     <h2>Journal des veilles</h2>
     <div class="panel" style="overflow-x:auto"><table class="j"><thead><tr><th>Date</th><th class="hide-m">Période</th><th class="n">Textes</th><th class="n">Applicables</th><th class="n">Criticité élevée</th><th class="hide-m">Faits marquants</th></tr></thead><tbody id="journal"></tbody></table></div>
   </section>
@@ -295,6 +312,24 @@ p.wait{margin:0;font-size:13px;color:var(--muted);font-style:italic}
     return "Dernière mise à jour : "+s.replace(/ à /," à ").replace(/:/,"h");
   }
 
+  var TABS=["echeances","textes","calendrier","journal"];
+  function showTab(name,push){
+    if(TABS.indexOf(name)===-1)name="echeances";
+    document.querySelectorAll("section.tab").forEach(function(sec){sec.hidden=sec.getAttribute("data-tab")!==name;});
+    document.querySelectorAll(".tabs button").forEach(function(b){b.setAttribute("aria-selected",b.getAttribute("data-tab")===name?"true":"false");});
+    if(push)history.replaceState(null,"","#"+name);
+  }
+  function goTo(hash){
+    var id=hash.replace(/^#/,""); if(!id){showTab("echeances");return;}
+    if(TABS.indexOf(id)!==-1){showTab(id);return;}
+    var el=document.getElementById(id); if(!el){showTab("echeances");return;}
+    var sec=el.closest("section.tab"); showTab(sec?sec.getAttribute("data-tab"):"echeances");
+    if(el.tagName==="DETAILS")el.open=true;
+    setTimeout(function(){el.scrollIntoView({block:"start"});},30);
+  }
+  document.querySelectorAll(".tabs button").forEach(function(b){b.addEventListener("click",function(){showTab(b.getAttribute("data-tab"),true);window.scrollTo({top:document.querySelector(".tabs").offsetTop-8});});});
+  window.addEventListener("hashchange",function(){goTo(location.hash);});
+
   function uniq(a){return a.filter(function(v,i){return v&&a.indexOf(v)===i;}).sort(function(x,y){return x.localeCompare(y,"fr");});}
 
   fetch("data/veille.json?v="+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(j){
@@ -306,7 +341,9 @@ p.wait{margin:0;font-size:13px;color:var(--muted);font-style:italic}
     fillSelect($("f-crit"),Object.keys(CRIT));
     fillSelect($("f-site"),SITES);
     kpis(ts); deadlines(ts); calendar(); journal(j.journal||[]); render();
-    if(location.hash){var el=document.getElementById(location.hash.slice(1));if(el){el.open=true;el.scrollIntoView();}}
+    $("n-txt").textContent=ts.length; $("n-cal").textContent=(j.calendrier||[]).length;
+    $("n-ech").textContent=$("deadlines").querySelectorAll("li:not(.empty)").length;
+    goTo(location.hash);
   }).catch(function(e){
     $("updated").textContent="Données indisponibles";
     $("list").innerHTML='<div class="err">Impossible de charger data/veille.json ('+esc(e.message)+').</div>';
@@ -316,7 +353,7 @@ p.wait{margin:0;font-size:13px;color:var(--muted);font-style:italic}
   $("sort").addEventListener("click",function(){sortMode=sortMode==="prio"?"date":"prio";this.textContent="Trier : "+(sortMode==="prio"?"priorité":"plus récents");render();});
   $("toggle").addEventListener("click",function(){opened=!opened;this.textContent=opened?"Tout replier":"Tout déplier";document.querySelectorAll("details.t").forEach(function(x){x.open=opened;});});
   $("reset").addEventListener("click",function(){["q","f-dom","f-app","f-crit","f-site"].forEach(function(id){$(id).value="";});render();});
-  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('.dl a');if(a){var el=document.getElementById(a.getAttribute("href").slice(1));if(el)el.open=true;}});
+
 })();
 </script>
 </body>
