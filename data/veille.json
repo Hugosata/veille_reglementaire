@@ -1,6 +1,6 @@
 {
  "meta": {
-  "updated_at": "2026-11-25T10:52+01:00",
+  "updated_at": "2026-11-26T11:22+01:00",
   "source": "Registre de veille réglementaire QSE/RSE – SATA",
   "count": 34
  },
@@ -21,7 +21,8 @@
    "resume": "Arrêté sécheresse en vigueur en Isère (page préfecture mise à jour le 09/11/2026) : Oisans-Bonne et Trièves-Matheysine en Alerte, Romanche en Vigilance. Démarrage de la production de neige concerné. Règles propres à la neige de culture non lues dans l'arrêté : à vérifier dans l'arrêté-cadre (annexes zones et usages).",
    "sites": "Alpe d'Huez ; Les 2 Alpes ; Alpe du Grand Serre",
    "lien": "https://www.isere.gouv.fr/index.php/layout/set/print/Actions-de-l-Etat/Environnement/Politique-et-enjeux-de-l-Eau/Secheresse-et-gestion-quantitative/Secheresse/Arretes-secheresse-en-cours",
-   "publie": "2026-10-30"
+   "publie": "2026-10-30",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-002",
@@ -39,7 +40,8 @@
    "resume": "Remplace la directive 2006/42/CE à partir du 20/01/2027. Nouvelles exigences essentielles (cybersécurité, IA, modification substantielle, notice numérique). Pour l'utilisateur : vigilance à l'achat et lors des modifications internes de machines ; les règles d'utilisation (Code du travail, VGP) restent inchangées.",
    "sites": "Tous sites (ateliers, damage, neige de culture)",
    "lien": "https://www.inrs.fr/publications/juridique/focus-juridiques/nouveau-reglement-machines.html",
-   "publie": "2023-06-29"
+   "publie": "2023-06-29",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-003",
@@ -57,7 +59,8 @@
    "resume": "Transposition de la directive efficacité énergétique : audit tous les 4 ans au-delà de 2,75 GWh/an (sauf SME), SME certifié ISO 50001 obligatoire au-delà de 23,6 GWh/an, déclaration sur audit-energie.ademe.fr, contrôles DREAL. Dates exactes des échéances à confirmer dans les textes (non affichées sur la page ministérielle).",
    "sites": "Tous sites",
    "lien": "https://www.ecologie.gouv.fr/politiques-publiques/audit-energetique-systemes-management-lenergie-entreprise",
-   "publie": "2025-12-30"
+   "publie": "2025-12-30",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-004",
@@ -75,7 +78,8 @@
    "resume": "Publication au 16/09/2026 et transition de 3 ans (fin 30/09/2029) selon une source secondaire : à confirmer sur iso.org / IAF. Pour une première certification, viser directement la version 2026 évite une double transition.",
    "sites": "Tous sites",
    "lien": "https://www.iso-9001-checklist.co.uk/iso-9001-2026-revision.htm",
-   "publie": "2026-09-16"
+   "publie": "2026-09-16",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-005",
@@ -93,7 +97,8 @@
    "resume": "Entrée en vigueur le 26/11/2026 (sauf art. 12, 23, 26 et 52). Défrichement (art. 31-34), espèces protégées (art. 36-43, demandes déposées à compter de l'entrée en vigueur), ICPE enregistrement (art. 18-20), urbanisme. Analyse faite sur un commentaire d'avocat : texte officiel non lu.",
    "sites": "Tous sites (projets d'aménagement)",
    "lien": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055137503",
-   "publie": "2026-11-25"
+   "publie": "2026-11-25",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-006",
@@ -111,7 +116,8 @@
    "resume": "Le démarrage de la filière REP des emballages professionnels passe du 01/07/2026 au 01/01/2027, avec ajustements du cahier des charges (place de la restauration à partir de 2027). Conditions de reprise et seuils non vérifiés (article source payant) : à analyser sur le texte officiel.",
    "sites": "Tous sites (restaurants, points de vente, ateliers)",
    "lien": "https://www.actu-environnement.com/ae/reglementation/arrete-du-03-11-2026-tecp2620919a-40828.php",
-   "publie": "2026-11-18"
+   "publie": "2026-11-18",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-007",
@@ -129,7 +135,8 @@
    "resume": "Selon les commentaires disponibles : ajout du lupus au tableau n° 25 (silice) et création d'un tableau dédié à un cancer. Contenu exact à confirmer sur Légifrance (non lu).",
    "sites": "Tous sites (ateliers, travaux)",
    "lien": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055057725",
-   "publie": "2026-11-05"
+   "publie": "2026-11-05",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-008",
@@ -147,7 +154,8 @@
    "resume": "Remplace les annexes du règlement délégué 2023/2772 (ESRS). En vigueur le 10/11/2026, applicable aux exercices ouverts à partir du 01/01/2027 (choix possible pour 2026).",
    "sites": "Siège",
    "lien": "https://www.juriguide.com/2026/11/11/esrs-normes-revisees-entree-vigueur-10-novembre-2026-presedd-1111/",
-   "publie": "2026-09-21"
+   "publie": "2026-09-21",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-009",
@@ -165,7 +173,8 @@
    "resume": "Publication annoncée en avril 2026 par une source secondaire unique, sans date précise : à confirmer sur iso.org.",
    "sites": "Tous sites",
    "lien": "https://www.iso-9001-checklist.co.uk/iso-9001-2026-revision.htm",
-   "publie": null
+   "publie": null,
+   "analyse_le": null
   },
   {
    "id": "VR-2026-010",
@@ -183,7 +192,8 @@
    "resume": "Texte d'initiative parlementaire, non adopté. Pourrait créer des sanctions pour les usagers des pistes et des pouvoirs pour les exploitants. Stade d'examen non vérifié.",
    "sites": "Tous domaines skiables",
    "lien": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2389_proposition-loi.pdf",
-   "publie": null
+   "publie": null,
+   "analyse_le": null
   },
   {
    "id": "VR-2026-011",
@@ -201,7 +211,8 @@
    "resume": "Taux AT/MP unique pour tous les établissements d'une même entreprise sous un même code risque (tarification individuelle ou mixte). Écrêtement 2027 limité. Les sinistres d'un site pèseront sur tous les autres.",
    "sites": "Tous sites",
    "lien": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054979559",
-   "publie": "2026-10-14"
+   "publie": "2026-10-14",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-012",
@@ -219,7 +230,8 @@
    "resume": "Hausse anticipée de 1,6 % au 01/12/2026. Montant horaire brut et numéro du décret à confirmer au JO ; possible nouvelle revalorisation au 01/01/2027.",
    "sites": "Tous sites",
    "lien": "https://code.travail.gouv.fr/actualite/smic-une-augmentation-au-1er-decembre-2026-quelles-consequences-sur-les-salaires",
-   "publie": null
+   "publie": null,
+   "analyse_le": null
   },
   {
    "id": "VR-2026-013",
@@ -237,7 +249,8 @@
    "resume": "Montants annoncés par le BOSS (source secondaire lue). Arrêté officiel à confirmer au JO avant fin 2026.",
    "sites": "Tous sites",
    "lien": "https://www.editions-tissot.fr/actualite/droit-du-travail/plafond-de-la-securite-sociale-le-boss-annonce-les-nouveaux-montants",
-   "publie": "2026-10-16"
+   "publie": "2026-10-16",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-014",
@@ -255,7 +268,8 @@
    "resume": "Fourchette de salaire à l'embauche, interdiction de demander le salaire antérieur, droit d'information, index renforcé. Examen parlementaire attendu en 2027 ; dates d'application à confirmer.",
    "sites": "Tous sites",
    "lien": "https://www.senat.fr/leg/pjl25-944.html",
-   "publie": "2026-09-10"
+   "publie": "2026-09-10",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-015",
@@ -273,7 +287,8 @@
    "resume": "Depuis le 01/10/2026, un accord prévoyant plus de 4 ans entre deux entretiens ne s'applique plus. Texte antérieur à la période, ajouté pour l'initialisation.",
    "sites": "Tous sites",
    "lien": "https://www.editions-tissot.fr/actualite/representants-du-personnel-ce/entretiens-de-parcours-professionnel-les-accords-non-conformes-ne-sappliquent-plus-depuis-le-1er-octobre-2026",
-   "publie": "2025-10-25"
+   "publie": "2025-10-25",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-016",
@@ -291,7 +306,8 @@
    "resume": "Contre-indication au travail extérieur non respectée : manquement à l'obligation de sécurité, réparation sans preuve d'un lien de causalité. Concerne directement les postes exposés au froid.",
    "sites": "Tous sites",
    "lien": "https://www.inrs.fr/dam/inrs/actualitesJuridiques/2026/AJ-septembre-2026-INRS.pdf",
-   "publie": "2026-09-09"
+   "publie": "2026-09-09",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-017",
@@ -309,7 +325,8 @@
    "resume": "L'action relève de l'exécution du contrat : prescription de 2 ans (L. 1471-1), et non de 5 ans.",
    "sites": "Tous sites",
    "lien": "https://www.dalloz-actualite.fr/document/soc-7-oct-2026-fs-b-n-25-11362",
-   "publie": "2026-10-07"
+   "publie": "2026-10-07",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-018",
@@ -327,7 +344,8 @@
    "resume": "Fixe le coût de référence des cotisations aux services de santé au travail interentreprises. Montant à vérifier sur Légifrance.",
    "sites": "Tous sites",
    "lien": "https://www.inrs.fr/dam/inrs/actualitesJuridiques/2026/AJ-septembre-2026-INRS.pdf",
-   "publie": "2026-09-30"
+   "publie": "2026-09-30",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-019",
@@ -345,7 +363,8 @@
    "resume": "Zones de chargement/déchargement sur la voie publique à délimiter. ADR 2027 applicable au 01/01/2027, ADR 2025 toléré jusqu'au 30/06/2027. Détail ADR issu d'une source secondaire, à confirmer.",
    "sites": "Tous sites",
    "lien": "https://trans.info/fr/adr-2027-les-nouvelles-regles-a-anticiper-507309",
-   "publie": "2026-09-08"
+   "publie": "2026-09-08",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-020",
@@ -363,7 +382,8 @@
    "resume": "L'inspection du travail cible DUERP, circulation, VGP, formation et autorisations de conduite, et les publics vulnérables (saisonniers, intérimaires). Démarrage d'hiver = exposition maximale.",
    "sites": "Tous sites",
    "lien": "https://www.capeb.fr/actualites/inspection-du-travail-les-engins-et-equipements-mobiles-au-coeur-des-controles-en-2026",
-   "publie": "2026-09-08"
+   "publie": "2026-09-08",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-021",
@@ -381,7 +401,8 @@
    "resume": "Révision au stade DIS. Durée de transition non fixée, à confirmer sur iso.org.",
    "sites": "Tous sites",
    "lien": "https://www.dnv.com/news/2026/draft-version-of-iso-45001-released/",
-   "publie": "2026-07-03"
+   "publie": "2026-07-03",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-022",
@@ -399,7 +420,8 @@
    "resume": "Abroge l'article 5 (calcul de la dose efficace) après une décision du Conseil d'État. Les autres obligations (mesurage, évaluation) restent inchangées.",
    "sites": "Les 2 Alpes",
    "lien": "https://www.inrs.fr/dam/inrs/actualitesJuridiques/2026/AJ-septembre-2026-INRS.pdf",
-   "publie": "2026-09-13"
+   "publie": "2026-09-13",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-023",
@@ -417,7 +439,8 @@
    "resume": "En navette. Pérennisation de l'exonération sur le rachat de jours de repos, harmonisation du régime des indemnités de rupture. Mesures AT/MP et saisonniers à confirmer après adoption.",
    "sites": "Tous sites",
    "lien": "https://www.senat.fr/leg/pjl26-138.html",
-   "publie": "2026-10-01"
+   "publie": "2026-10-01",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-024",
@@ -435,7 +458,8 @@
    "resume": "Nouveaux taux de redevance prélèvement à partir de 2027 (12e programme), remplaçant la délib. 2025-21. Taux et traitement de la neige de culture non lus : à confirmer.",
    "sites": "Tous sites",
    "lien": "https://www.actu-environnement.com/ae/reglementation/avis-du-16-10-2026-tecl2626044v-40578.php",
-   "publie": "2026-10-16"
+   "publie": "2026-10-16",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-025",
@@ -453,7 +477,8 @@
    "resume": "Après l'annulation de l'arrêté du 3/07/2024 par le Conseil d'État, le projet dispense les plans d'eau < 1 ha en zone humide de démontrer l'absence d'alternative. Application aux retenues de neige de culture à confirmer.",
    "sites": "Tous sites (retenues collinaires)",
    "lien": "https://www.consultations-publiques.developpement-durable.gouv.fr/projet-d-arrete-modifiant-l-arrete-du-9-juin-2021-a3462.html?lang=fr",
-   "publie": "2026-10-14"
+   "publie": "2026-10-14",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-026",
@@ -471,7 +496,8 @@
    "resume": "Nouvel art. R. 122-15 : l'autorité vérifie à la date de sa décision que l'étude d'impact reste pertinente. Réponse tardive à l'avis de l'AE publiée dès réception ; AE unique pour les évaluations communes.",
    "sites": "Tous sites (projets)",
    "lien": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000055081170",
-   "publie": "2026-11-13"
+   "publie": "2026-11-13",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-027",
@@ -489,7 +515,8 @@
    "resume": "Modifie l'art. R. 411-6-2 C. env. (critères de bénéfices et de territoire). Applique l'art. 36 de la loi de simplification 2026-403.",
    "sites": "Tous sites (projets)",
    "lien": "https://aida.ineris.fr/reglementation/decret-ndeg-2026-980-231026-modifiant-code-lenvironnement-vue-preciser-modalites",
-   "publie": "2026-10-24"
+   "publie": "2026-10-24",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-028",
@@ -507,7 +534,8 @@
    "resume": "CSRD limitée aux entreprises de plus de 1 000 salariés et 450 M€ de CA ; CS3D aux plus de 5 000 salariés et 1,5 Md€. Transposition CSRD attendue pour mars 2027 (date à confirmer).",
    "sites": "Siège / groupe",
    "lien": "https://eur-lex.europa.eu/eli/dir/2026/470/oj",
-   "publie": "2026-02-26"
+   "publie": "2026-02-26",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-029",
@@ -525,7 +553,8 @@
    "resume": "Norme d'application volontaire qui plafonne les informations exigibles d'une entreprise par ses partenaires de la chaîne de valeur. Date d'entrée en vigueur déduite, à confirmer.",
    "sites": "Siège / groupe",
    "lien": "https://eur-lex.europa.eu/eli/reg_del/2026/1560/oj",
-   "publie": "2026-09-21"
+   "publie": "2026-09-21",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-030",
@@ -543,7 +572,8 @@
    "resume": "Nouveau régime au 01/01/2027, abrogation de l'arrêté du 30/06/2008 au 31/12/2026. Déclaration annuelle des fluides par les opérateurs avant le 31/01.",
    "sites": "Tous sites (restaurants, ateliers, salles des machines)",
    "lien": "https://aida.ineris.fr/reglementation/arrete-211125-relatif-a-delivrance-attestations-capacite-operateurs-prevues-a",
-   "publie": "2025-12-06"
+   "publie": "2025-12-06",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-031",
@@ -561,7 +591,8 @@
    "resume": "Interdiction de mise sur le marché de certains équipements monoblocs à fluide de PRP ≥ 150 (R32 compris). Points exacts de l'annexe IV à confirmer sur EUR-Lex.",
    "sites": "Tous sites",
    "lien": "https://eur-lex.europa.eu/eli/reg/2024/573/oj",
-   "publie": "2024-02-20"
+   "publie": "2024-02-20",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-032",
@@ -579,7 +610,8 @@
    "resume": "Hausse prévue des recettes d'accises sur les énergies. Ajustement de l'accise électricité au 01/02/2027 issu d'une source secondaire, à confirmer.",
    "sites": "Tous sites",
    "lien": "https://www.assemblee-nationale.fr/dyn/opendata/PRJLANR5L17B3210.html",
-   "publie": "2026-10-01"
+   "publie": "2026-10-01",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-033",
@@ -597,7 +629,8 @@
    "resume": "Supprime 27 fiches CEE (bâtiment, industrie, transport), dont certaines utiles aux bâtiments, ateliers et à la flotte.",
    "sites": "Tous sites",
    "lien": "https://aida.ineris.fr/reglementation/arrete-261026-portant-suppression-fiches-doperations-standardisees-dispositif",
-   "publie": "2026-10-28"
+   "publie": "2026-10-28",
+   "analyse_le": null
   },
   {
    "id": "VR-2026-034",
@@ -615,7 +648,8 @@
    "resume": "Plan national de restauration au titre du règlement européen. Date et modalités de consultation à confirmer.",
    "sites": "Tous sites",
    "lien": "https://www.ecologie.gouv.fr/sites/default/files/documents/14.10.20265_MTE_Plan_national_Restauration_de_la_nature.pdf",
-   "publie": "2026-10-14"
+   "publie": "2026-10-14",
+   "analyse_le": null
   }
  ],
  "journal": [
@@ -642,6 +676,272 @@
    "applicables": 0,
    "eleves": 0,
    "faits": "Aucun nouveau texte applicable depuis les veilles du jour. Décret SMIC au 01/12/2026 et arrêté PMSS 2027 toujours non repérés au JO (VR-2026-012 et 013 restent à confirmer). Publication GitHub non effectuée : outil d'accès au dépôt indisponible."
+  }
+ ],
+ "calendrier": [
+  {
+   "id": "CAL-001",
+   "obligation": "Publication de l'index égalité femmes-hommes (et transmission à l'inspection du travail et au CSE)",
+   "domaine": "Droit social & RH",
+   "echeance": "2027-03-01",
+   "periodicite": "Annuelle (au plus tard le 1er mars)",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. L. 1142-8 et D. 1142-4 (entreprises ≥ 50 salariés) ; à suivre avec la transposition de la directive transparence salariale (VR-2026-014)",
+   "sites": "Tous sites",
+   "lien": "https://entreprendre.service-public.gouv.fr/vosdroits/F35103"
+  },
+  {
+   "id": "CAL-002",
+   "obligation": "Déclaration obligatoire d'emploi des travailleurs handicapés (DOETH) dans la DSN d'avril",
+   "domaine": "Droit social & RH",
+   "echeance": "2027-05-05",
+   "periodicite": "Annuelle (DSN d'avril, échéance du 5 ou du 15 mai selon l'échéance DSN de l'entreprise)",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. L. 5212-1 et s. ; décret n° 2019-522 (entreprises ≥ 20 salariés)",
+   "sites": "Tous sites",
+   "lien": "https://entreprendre.service-public.gouv.fr/vosdroits/F22523"
+  },
+  {
+   "id": "CAL-003",
+   "obligation": "Déclaration annuelle des volumes prélevés (redevance prélèvement Agence de l'eau RMC) – neige de culture, AEP",
+   "domaine": "Eau & neige de culture",
+   "echeance": "2027-03-31",
+   "periodicite": "Annuelle (avant le 31 mars N+1)",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. env. L. 213-10-9 et L. 213-11 ; formulaire Agence de l'eau RMC",
+   "sites": "Tous sites",
+   "lien": "https://www.eaurmc.fr/upload/docs/application/pdf/2026-02/f28_notice_5132508.pdf"
+  },
+  {
+   "id": "CAL-004",
+   "obligation": "Déclaration annuelle des émissions polluantes et des déchets (GEREP)",
+   "domaine": "Environnement & ICPE",
+   "echeance": "2027-03-31",
+   "periodicite": "Annuelle (avant le 31 mars N+1)",
+   "applicabilite": "À vérifier",
+   "statut": "À faire",
+   "reference": "Arrêté du 31/01/2008 modifié, art. 7 (ICPE soumises selon seuils)",
+   "sites": "À préciser",
+   "lien": "https://aida.ineris.fr/reglementation/arrete-310108-relatif-registre-a-declaration-annuelle-emissions-transferts-polluants"
+  },
+  {
+   "id": "CAL-005",
+   "obligation": "Déclaration annuelle des consommations des bâtiments tertiaires sur OPERAT (décret tertiaire)",
+   "domaine": "Énergie & climat",
+   "echeance": "2027-09-30",
+   "periodicite": "Annuelle (avant le 30 septembre N+1)",
+   "applicabilite": "À vérifier",
+   "statut": "À faire",
+   "reference": "C. constr. L. 174-1 et R. 174-22 et s. (bâtiments tertiaires ≥ 1 000 m²)",
+   "sites": "À préciser",
+   "lien": "https://operat.ademe.fr"
+  },
+  {
+   "id": "CAL-006",
+   "obligation": "Bilan des émissions de gaz à effet de serre (BEGES) et plan de transition",
+   "domaine": "Énergie & climat",
+   "echeance": null,
+   "periodicite": "Tous les 4 ans",
+   "applicabilite": "À vérifier",
+   "statut": "À faire",
+   "reference": "C. env. L. 229-25 (personnes morales > 500 salariés en métropole)",
+   "sites": "Tous sites",
+   "lien": "https://bilans-ges.ademe.fr"
+  },
+  {
+   "id": "CAL-007",
+   "obligation": "Audit énergétique ou certification ISO 50001",
+   "domaine": "Énergie & climat",
+   "echeance": null,
+   "periodicite": "Audit tous les 4 ans, ou SME certifié (selon consommation)",
+   "applicabilite": "Applicable",
+   "statut": "En cours",
+   "reference": "C. énergie L. 233-1 et s. ; voir VR-2026-003",
+   "sites": "Tous sites",
+   "lien": "https://www.ecologie.gouv.fr/politiques-publiques/audit-energetique-systemes-management-lenergie-entreprise"
+  },
+  {
+   "id": "CAL-008",
+   "obligation": "Mise à jour du DUERP",
+   "domaine": "Santé-Sécurité au travail",
+   "echeance": null,
+   "periodicite": "Au moins annuelle (≥ 11 salariés) et à chaque changement important",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. R. 4121-2",
+   "sites": "Tous sites",
+   "lien": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044436949"
+  },
+  {
+   "id": "CAL-009",
+   "obligation": "Programme annuel de prévention des risques (PAPRIPACT) présenté au CSE",
+   "domaine": "Santé-Sécurité au travail",
+   "echeance": null,
+   "periodicite": "Annuelle",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. L. 4121-3-1 (entreprises ≥ 50 salariés)",
+   "sites": "Tous sites",
+   "lien": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043884445"
+  },
+  {
+   "id": "CAL-010",
+   "obligation": "Vérification périodique des installations électriques",
+   "domaine": "Santé-Sécurité au travail",
+   "echeance": null,
+   "periodicite": "Annuelle",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. R. 4226-16 ; arrêté du 26/12/2011",
+   "sites": "Tous sites",
+   "lien": null
+  },
+  {
+   "id": "CAL-011",
+   "obligation": "Vérifications générales périodiques (VGP) des appareils et accessoires de levage",
+   "domaine": "Véhicules, engins & machines",
+   "echeance": null,
+   "periodicite": "6 ou 12 mois selon l'équipement",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "Arrêté du 01/03/2004",
+   "sites": "Tous sites (ateliers, dameuses à treuil, nacelles, chariots)",
+   "lien": null
+  },
+  {
+   "id": "CAL-012",
+   "obligation": "Vérification des extincteurs et moyens de secours incendie",
+   "domaine": "ERP, incendie & accessibilité",
+   "echeance": null,
+   "periodicite": "Annuelle",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. R. 4227-38 et s. ; règlement ERP",
+   "sites": "Tous sites",
+   "lien": null
+  },
+  {
+   "id": "CAL-013",
+   "obligation": "Exercices d'évacuation incendie",
+   "domaine": "ERP, incendie & accessibilité",
+   "echeance": null,
+   "periodicite": "Au moins tous les 6 mois",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. R. 4227-39",
+   "sites": "Tous sites",
+   "lien": null
+  },
+  {
+   "id": "CAL-014",
+   "obligation": "Visites périodiques de la commission de sécurité ERP",
+   "domaine": "ERP, incendie & accessibilité",
+   "echeance": null,
+   "periodicite": "Selon type et catégorie (2 à 5 ans)",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "Arrêté du 25/06/1980 (règlement de sécurité ERP)",
+   "sites": "Restaurants, gares, points de vente",
+   "lien": null
+  },
+  {
+   "id": "CAL-015",
+   "obligation": "Contrôles et inspections des remontées mécaniques (visites annuelles, grandes inspections)",
+   "domaine": "Remontées mécaniques & pistes",
+   "echeance": null,
+   "periodicite": "Annuelle et selon les guides STRMTG (RM1, RM2…)",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. tourisme / C. transports ; guides techniques STRMTG",
+   "sites": "Tous sites",
+   "lien": "https://www.strmtg.developpement-durable.gouv.fr"
+  },
+  {
+   "id": "CAL-016",
+   "obligation": "Mise à jour et approbation du PIDA avant la saison d'hiver",
+   "domaine": "Explosifs & déclenchement d'avalanches",
+   "echeance": null,
+   "periodicite": "Avant chaque saison d'hiver",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "Réglementation PIDA (arrêtés préfectoraux et municipaux) – références à confirmer",
+   "sites": "Tous domaines",
+   "lien": null
+  },
+  {
+   "id": "CAL-017",
+   "obligation": "Contrôles d'étanchéité des équipements contenant des fluides frigorigènes",
+   "domaine": "Énergie & climat",
+   "echeance": null,
+   "periodicite": "Selon la charge en t CO2e (3, 6, 12 ou 24 mois)",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "Règlement (UE) 2024/573, art. 5 ; voir VR-2026-030",
+   "sites": "Restaurants, ateliers, salles des machines",
+   "lien": "https://eur-lex.europa.eu/eli/reg/2024/573/oj"
+  },
+  {
+   "id": "CAL-018",
+   "obligation": "Recyclage des formations obligatoires (SST, CACES/autorisations de conduite, habilitations électriques, préposés au tir)",
+   "domaine": "Santé-Sécurité au travail",
+   "echeance": null,
+   "periodicite": "SST : 24 mois ; CACES : 5 ou 10 ans ; habilitation électrique : recyclage recommandé 3 ans",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. R. 4323-55 et s., R. 4544-10 ; recommandations INRS",
+   "sites": "Tous sites",
+   "lien": null
+  },
+  {
+   "id": "CAL-019",
+   "obligation": "Entretiens professionnels (et bilan à 8 ans)",
+   "domaine": "Droit social & RH",
+   "echeance": null,
+   "periodicite": "1re année puis tous les 4 ans ; bilan tous les 8 ans",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "C. trav. L. 6315-1 ; voir VR-2026-015",
+   "sites": "Tous sites",
+   "lien": null
+  },
+  {
+   "id": "CAL-020",
+   "obligation": "Registre chronologique des déchets et bordereaux Trackdéchets (déchets dangereux)",
+   "domaine": "Déchets & économie circulaire",
+   "echeance": null,
+   "periodicite": "En continu",
+   "applicabilite": "Applicable",
+   "statut": "En cours",
+   "reference": "C. env. R. 541-43 ; arrêté du 31/05/2021",
+   "sites": "Tous sites",
+   "lien": "https://trackdechets.beta.gouv.fr"
+  },
+  {
+   "id": "CAL-021",
+   "obligation": "Mise à jour du registre public d'accessibilité des ERP",
+   "domaine": "ERP, incendie & accessibilité",
+   "echeance": null,
+   "periodicite": "En continu",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "Arrêté du 19/04/2017 (registre public d'accessibilité)",
+   "sites": "Restaurants, gares, points de vente",
+   "lien": null
+  },
+  {
+   "id": "CAL-022",
+   "obligation": "Revue de conformité réglementaire et revue de direction ISO 9001",
+   "domaine": "Qualité & normes ISO",
+   "echeance": null,
+   "periodicite": "Annuelle (bilan trimestriel préparé par la routine de veille)",
+   "applicabilite": "Applicable",
+   "statut": "À faire",
+   "reference": "ISO 9001:2026 § 9.1 et 9.3",
+   "sites": "Tous sites",
+   "lien": null
   }
  ]
 }

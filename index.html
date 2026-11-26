@@ -91,6 +91,11 @@ table.j th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spa
 table.j td.n,table.j th.n{text-align:right;font-variant-numeric:tabular-nums}
 footer{color:var(--muted);font-size:13px;padding:10px 0 40px}
 footer p{margin:6px 0}
+.muted{color:var(--muted);font-size:12px;margin-top:2px}
+.nowrap{white-space:nowrap;font-variant-numeric:tabular-nums}
+.late-t{color:var(--red);font-weight:700}
+p.ok{margin:0;font-size:13px;color:var(--green);font-weight:600}
+p.wait{margin:0;font-size:13px;color:var(--muted);font-style:italic}
 .err{background:var(--red-bg);color:var(--red);padding:14px;border-radius:10px}
 @media (max-width:860px){
   .kpis{grid-template-columns:repeat(2,1fr)}
@@ -124,7 +129,7 @@ footer p{margin:6px 0}
   <div class="kpis" id="kpis"></div>
 
   <section>
-    <h2>Prochaines échéances <small>actions à mener dans les 90 jours</small></h2>
+    <h2>Prochaines échéances <small>actions issues de la veille et obligations récurrentes, 90 jours</small></h2>
     <div class="panel"><ul class="dl" id="deadlines"></ul></div>
   </section>
 
@@ -146,6 +151,11 @@ footer p{margin:6px 0}
       </span>
     </div>
     <div class="list" id="list"></div>
+  </section>
+
+  <section>
+    <h2>Calendrier réglementaire <small id="cal-count"></small></h2>
+    <div class="panel" style="overflow-x:auto"><table class="j"><thead><tr><th>Obligation récurrente</th><th class="hide-m">Domaine</th><th>Prochaine échéance</th><th class="hide-m">Périodicité</th><th>Statut</th></tr></thead><tbody id="calendar"></tbody></table></div>
   </section>
 
   <section>
@@ -185,10 +195,12 @@ footer p{margin:6px 0}
 
   function fillSelect(el,values){values.forEach(function(v){var o=document.createElement("option");o.value=v;o.textContent=v;el.appendChild(o);});}
 
+  function openCal(){return (DATA.calendrier||[]).filter(function(c){return c.statut!=="Fait"&&c.statut!=="Non applicable";});}
   function kpis(ts){
     var app=ts.filter(function(t){return t.applicabilite==="Applicable";}).length;
     var el=ts.filter(function(t){return t.criticite==="Élevée" && t.applicabilite!=="Non applicable";}).length;
-    var soon=ts.filter(function(t){var n=daysTo(t.echeance);return n!==null&&n<=90&&t.statut!=="Conforme / clos"&&t.statut!=="Sans suite";}).length;
+    var soon=ts.filter(function(t){var n=daysTo(t.echeance);return n!==null&&n<=90&&t.statut!=="Conforme / clos"&&t.statut!=="Sans suite";}).length
+      +openCal().filter(function(c){var n=daysTo(c.echeance);return n!==null&&n<=90;}).length;
     $("kpis").innerHTML=
       '<div class="kpi"><b>'+ts.length+'</b><span>textes suivis</span></div>'+
       '<div class="kpi"><b>'+app+'</b><span>applicables à la SATA</span></div>'+
@@ -198,15 +210,31 @@ footer p{margin:6px 0}
 
   function deadlines(ts){
     var items=ts.filter(function(t){var n=daysTo(t.echeance);return n!==null&&n<=90&&t.statut!=="Conforme / clos"&&t.statut!=="Sans suite";})
-      .sort(function(a,b){return d(a.echeance)-d(b.echeance);});
+      .map(function(t){return {date:t.echeance,title:t.intitule,sub:t.action||"",href:"#"+t.id,pill:t.criticite||"",pcls:cls(0,t.criticite,"p-")};});
+    openCal().forEach(function(c){var n=daysTo(c.echeance);if(n!==null&&n<=90)items.push({date:c.echeance,title:c.obligation,sub:(c.periodicite||"")+(c.reference?" · "+c.reference:""),href:"#cal-"+c.id,pill:"Récurrent",pcls:"p-dom"});});
+    items.sort(function(a,b){return d(a.date)-d(b.date);});
     if(!items.length){$("deadlines").innerHTML='<li class="empty" style="display:block">Aucune échéance dans les 90 prochains jours.</li>';return;}
-    $("deadlines").innerHTML=items.map(function(t){
-      var n=daysTo(t.echeance), state=n<0?"late":(n<=30?"soon":"");
+    $("deadlines").innerHTML=items.map(function(it){
+      var n=daysTo(it.date), state=n<0?"late":(n<=30?"soon":"");
       var rel=n<0?("dépassée de "+(-n)+" j"):(n===0?"aujourd'hui":"dans "+n+" j");
-      return '<li class="'+state+'"><div class="when">'+fr(t.echeance)+'<small>'+rel+'</small></div>'+
-        '<div class="what"><a href="#'+esc(t.id)+'">'+esc(t.intitule)+'</a><div>'+esc(t.action||"")+'</div></div>'+
-        '<span class="pill '+cls(0,t.criticite,"p-")+'">'+esc(t.criticite||"")+'</span></li>';
+      return '<li class="'+state+'"><div class="when">'+fr(it.date)+'<small>'+rel+'</small></div>'+
+        '<div class="what"><a href="'+esc(it.href)+'">'+esc(it.title)+'</a><div>'+esc(it.sub)+'</div></div>'+
+        '<span class="pill '+it.pcls+'">'+esc(it.pill)+'</span></li>';
     }).join("");
+  }
+
+  function calendar(){
+    var cs=(DATA.calendrier||[]).slice().sort(function(a,b){return (d(a.echeance)||9e15)-(d(b.echeance)||9e15)||String(a.id).localeCompare(String(b.id));});
+    $("cal-count").textContent=cs.length?cs.length+" obligations":"";
+    $("calendar").innerHTML=cs.length?cs.map(function(c){
+      var url=safeUrl(c.lien), n=daysTo(c.echeance);
+      var st=c.statut==="Fait"?"p-app":(c.statut==="En cours"?"p-mo":"");
+      return '<tr id="cal-'+esc(c.id)+'"><td><b>'+esc(c.obligation)+'</b>'+(c.reference?'<div class="muted">'+esc(c.reference)+'</div>':'')+(url?' <a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">↗</a>':'')+'</td>'+
+        '<td class="hide-m"><span class="pill p-dom">'+esc(c.domaine||"")+'</span></td>'+
+        '<td class="nowrap'+(n!==null&&n<0&&c.statut!=="Fait"?' late-t':'')+'">'+(c.echeance?fr(c.echeance):'<span class="muted">à planifier</span>')+'</td>'+
+        '<td class="hide-m">'+esc(c.periodicite||"")+'</td>'+
+        '<td>'+(c.applicabilite==="À vérifier"?'<span class="pill p-ana">À vérifier</span> ':'')+'<span class="pill '+st+'">'+esc(c.statut||"")+'</span></td></tr>';
+    }).join(""):'<tr><td colspan="5" class="empty">Pas encore d\'obligation renseignée.</td></tr>';
   }
 
   function card(t){
@@ -219,10 +247,11 @@ footer p{margin:6px 0}
         '<span class="pill p-dom">'+esc(t.domaine||"")+'</span>'+
         (t.applicabilite?'<span class="pill '+cls(0,t.applicabilite,"p-")+'">'+esc(t.applicabilite)+'</span>':'')+
         (t.criticite?'<span class="pill '+cls(0,t.criticite,"p-")+'">Criticité '+esc(t.criticite.toLowerCase())+'</span>':'')+
-        (t.statut?'<span class="pill">'+esc(t.statut)+'</span>':'')+
+        (t.statut?'<span class="pill">'+esc(t.statut)+'</span>':'')+(t.analyse_le?'<span class="pill p-app">✓ Analysé</span>':'')+
         (t.type?'<span class="pill">'+esc(t.type)+'</span>':'')+
       '</div></summary>'+
       '<div class="body">'+
+        '<p class="'+(t.analyse_le?'ok':'wait')+'">'+(t.analyse_le?'✓ Analysé par le service QSE/RSE le '+fr(t.analyse_le):'En attente d\'analyse par le service QSE/RSE')+'</p>'+
         (t.resume?'<div><h4>Résumé</h4><p>'+esc(t.resume)+'</p></div>':'')+
         (t.action?'<div class="action"><h4>Action pour la SATA</h4><p>'+esc(t.action)+'</p></div>':'')+
         '<div class="grid2">'+
@@ -276,7 +305,7 @@ footer p{margin:6px 0}
     fillSelect($("f-app"),Object.keys(APP).filter(function(k){return ts.some(function(t){return t.applicabilite===k;});}));
     fillSelect($("f-crit"),Object.keys(CRIT));
     fillSelect($("f-site"),SITES);
-    kpis(ts); deadlines(ts); journal(j.journal||[]); render();
+    kpis(ts); deadlines(ts); calendar(); journal(j.journal||[]); render();
     if(location.hash){var el=document.getElementById(location.hash.slice(1));if(el){el.open=true;el.scrollIntoView();}}
   }).catch(function(e){
     $("updated").textContent="Données indisponibles";

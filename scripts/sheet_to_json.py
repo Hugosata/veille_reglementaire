@@ -10,8 +10,11 @@ veille_raw.json / journal_raw.json : la valeur renvoyée par readCells (objet av
 une clé "rows" indexée par numéro de ligne, ligne 1 = en-têtes) pour les onglets
 « Veille » (A1:Q…) et « Journal des veilles » (A1:F…).
 
-Seules les colonnes publiques sont exportées : pas de pilote, et rien de l'onglet
-« Exigences applicables » (état de conformité interne).
+Option --calendrier : la valeur readCells de l'onglet « Calendrier réglementaire » (A1:M…).
+
+Seules les colonnes publiques sont exportées : ni pilote, ni « Analysé par », ni « Diffusé à »,
+ni référence d'action interne, ni responsable/preuve du calendrier, et rien de l'onglet
+« Exigences applicables » (état de conformité interne). La date « Analysé le » est publiée.
 """
 import argparse
 import json
@@ -22,6 +25,11 @@ VEILLE_COLS = [
     "id", "detecte", "intitule", "domaine", "applicabilite", "criticite",
     "vigueur", "action", "echeance", "statut", "type", "reference", "resume",
     "sites", "_pilote", "lien", "publie",
+    "_analyse_par", "analyse_le", "_diffuse_a", "_ref_qse",
+]
+CAL_COLS = [
+    "id", "obligation", "domaine", "echeance", "periodicite", "applicabilite",
+    "statut", "reference", "sites", "_responsable", "_derniere", "_preuve", "lien",
 ]
 JOURNAL_COLS = ["date", "periode", "detectes", "applicables", "eleves", "faits"]
 
@@ -65,6 +73,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--veille", required=True)
     ap.add_argument("--journal")
+    ap.add_argument("--calendrier", help="readCells de l'onglet « Calendrier réglementaire » (A1:M…)")
     ap.add_argument("--out", default="data/veille.json")
     ap.add_argument("--updated-at", help="ISO 8601 ; par défaut maintenant (Europe/Paris)")
     a = ap.parse_args()
@@ -76,6 +85,12 @@ def main():
         with open(a.journal, encoding="utf-8") as f:
             journal = [j for j in rows_of(json.load(f), JOURNAL_COLS) if j.get("date")]
 
+    calendrier = []
+    if a.calendrier:
+        with open(a.calendrier, encoding="utf-8") as f:
+            calendrier = [c for c in rows_of(json.load(f), CAL_COLS)
+                          if c.get("id") and c.get("applicabilite") != "Non applicable"]
+
     updated = a.updated_at or datetime.now(ZoneInfo("Europe/Paris")).isoformat(timespec="minutes")
     data = {
         "meta": {
@@ -85,10 +100,11 @@ def main():
         },
         "textes": textes,
         "journal": journal,
+        "calendrier": calendrier,
     }
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
-    print(f"{len(textes)} textes, {len(journal)} entrées de journal -> {a.out} (maj {updated})")
+    print(f"{len(textes)} textes, {len(calendrier)} obligations du calendrier, {len(journal)} entrées de journal -> {a.out} (maj {updated})")
 
 
 if __name__ == "__main__":
